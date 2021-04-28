@@ -1,5 +1,5 @@
 # NuChat
-Chat de comunicação em temp real inspirado no design visual do NuBank, utilizado como quesito avaliativo na matéria de porgramação web no curso de engenharia de software na UFMS
+Chat de comunicação em tempo real inspirado no design visual do NuBank, utilizado como quesito avaliativo na matéria de porgramação web no curso de engenharia de software na UFMS
 
 Baseado nas propóstas do Git: https://github.com/hsborges/progweb-app-ideas
 
