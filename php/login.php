@@ -17,7 +17,7 @@
 
     include("fimDeConexao.php");
     
-    if ($result == true){
+    if (mysqli_num_rows($result) >= 1){
         $linha = mysqli_fetch_assoc($result);
 
         //Iniciar Sessao
@@ -29,6 +29,8 @@
         echo "<script>window.location.href = '../pgChat.php';</script>";
     } else{
         $_SESSION["tryLogin"] = true;
+
+        echo "<script>alert('Login Incorreto, tente novamente!')</script>";
 
         echo "<script>window.location.href = '../pgLogin.php';</script>";
     }

@@ -19,7 +19,7 @@
     }
 
     //Verificacao de existencia de conteudo
-    if ((isset($nome) && isset($email) && isset($sexo) && isset($nascimento) && isset($senha) && isset($confirmaSenha) && isset($termos) && isset($atualizacoes))) != true){
+    if ((isset($nome) && isset($email) && isset($sexo) && isset($nascimento) && isset($senha) && isset($confirmaSenha) && isset($termos) && isset($atualizacoes)) != true){
         echo "<script>alert('Você precisa preencher TODOS os campos antes de se cadastrar');</script>";
 
         echo "<script>window.location.href = '../pgCadastro.php';</script>";
@@ -43,29 +43,30 @@
     include("conexao.php");
 
     //Verificacao de existencia de tupla
-    $sql = "SELECT email FROM usuarios WHERE email = '$email'";
+    $sql = "SELECT nome FROM usuarios WHERE email = '$email'";
     $result = mysqli_query($conexao, $sql);
     
     include("fimDeConexao.php");
 
-    if ($result == true){
+    if (mysqli_num_rows($result) >= 1){
         $linha = mysqli_fetch_assoc($result);
 
         echo "<script>alert('O usuário $linha[nome] ja é registrado!');</script>";
 
         echo "<script>window.location.href = '../pgLogin.php';</script>";
     }
-    
+
+    //Inicia conexao com o banco de dados
+    include("conexao.php");
+
     //Cadastrar usuario no banco de dados
-    $sql = "INSERT INTO usuarios(nome, email, senha, atualizacoes) VALUES ('$nome', '$email', '$senha', '$atualizacoes');";
+    $sql = "INSERT INTO usuarios(nome, sexo, email, nascimento, senha, atualizacoes) VALUES ('$nome', '$sexo', '$email', '$nascimento', '$senha', '$atualizacoes');";
     $result = mysqli_query($conexao, $sql);
 
     include("fimDeConexao.php");
 
     if ($result == true){
-        $linha = mysqli_fetch_assoc($result);
-
-        echo "<script>alert('$linha[nome] você foi cadastrado com sucesso, seja bem-vindo ao NuChat');</script>";
+        echo "<script>alert('$nome você foi cadastrado com sucesso, seja bem-vindo ao NuChat');</script>";
 
         echo "<script>window.location.href = '../pgChat.php';</script>";
     } else{
