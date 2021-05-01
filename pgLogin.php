@@ -18,16 +18,17 @@
                 <h2>Fazer Login</h2>
             </div>
             <div class="small-margin">
-                <form>
-                    <input type="text" id="login" name="login" placeholder="Digite seu e-mail">
-                    <input type="password" id="password" name="password" placeholder="Digite sua senha">
+                <form action="php/login.php" method="POST">
+                    <input type="email" id="login" name="txEmail" placeholder="Digite seu e-mail" required>
+                    <input type="password" id="password" name="txSenha" placeholder="Digite sua senha" required>
                     <a class="purple-font" href="pgEsqueciASenha1.php">Esqueceu sua senha?</a>
-                </form>
+                
             </div>
             <div class="align-center small-margin">
                 <a href="pgCadastro.php"><button class="secondary-button">Criar conta</button></a>
-                <a href="pgPerfil.php"><button class="primary-button">Conectar-se</button></a>
+                <input type="submit" class="primary-button" value="Conectar-se">
             </div>
+                </form>
         </div>
     </div>
 </body>
