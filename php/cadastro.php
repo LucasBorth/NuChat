@@ -1,6 +1,8 @@
 <?php
     $nome = $_POST["txNome"];
     $email = $_POST["txEmail"];
+    $sexo = $_POST["selectSexo"];
+    $nascimento = $_POST["dataNascimento"];
     $senha = md5($_POST["txSenha"]);
     $confirmaSenha = md5($_POST["txConfirmaSenha"]);
 
@@ -17,22 +19,22 @@
     }
 
     //Verificacao de existencia de conteudo
-    if ((isset($nome) && isset($email) && isset($senha) && isset($confirmaSenha) && isset($termos) && isset($atualizacoes)) != true){
-        echo "<script>alert('Você precisa preencher TODOS os campos antes de se cadastrar')</script>";
+    if ((isset($nome) && isset($email) && isset($sexo) && isset($nascimento) && isset($senha) && isset($confirmaSenha) && isset($termos) && isset($atualizacoes))) != true){
+        echo "<script>alert('Você precisa preencher TODOS os campos antes de se cadastrar');</script>";
 
         echo "<script>window.location.href = '../pgCadastro.php';</script>";
     }
 
     //Verificacao de confirmacao com os termos
     if ($termos != true){
-        echo "<script>alert('Você precisa aceitar os termos de política e privacidade')</script>";
+        echo "<script>alert('Você precisa aceitar os termos de política e privacidade');</script>";
 
         echo "<script>window.location.href = '../pgCadastro.php';</script>";
     }
 
     //Verificar se senha sao iguais
     if ($senha != $confirmaSenha){
-        echo "<script>alert('Os campos de senha não são correspondentes, por favor preencha novamente')</script>";
+        echo "<script>alert('Os campos de senha não são correspondentes, por favor preencha novamente');</script>";
 
         echo "<script>window.location.href = '../pgCadastro.php';</script>";
     }
@@ -44,12 +46,13 @@
     $sql = "SELECT email FROM usuarios WHERE email = '$email'";
     $result = mysqli_query($conexao, $sql);
     
+    include("fimDeConexao.php");
+
     if ($result == true){
         $linha = mysqli_fetch_assoc($result);
 
         echo "<script>alert('O usuário $linha[nome] ja é registrado!');</script>";
 
-        include("fimDeConexao.php");
         echo "<script>window.location.href = '../pgLogin.php';</script>";
     }
     
@@ -57,12 +60,17 @@
     $sql = "INSERT INTO usuarios(nome, email, senha, atualizacoes) VALUES ('$nome', '$email', '$senha', '$atualizacoes');";
     $result = mysqli_query($conexao, $sql);
 
+    include("fimDeConexao.php");
+
     if ($result == true){
         $linha = mysqli_fetch_assoc($result);
 
         echo "<script>alert('$linha[nome] você foi cadastrado com sucesso, seja bem-vindo ao NuChat');</script>";
 
-        include("fimDeConexao.php");
         echo "<script>window.location.href = '../pgChat.php';</script>";
+    } else{
+        echo "<script>alert('Algum erro ocorreu, por favor contate o Administrador');</script>";    
+
+        echo "<script>window.location.href = '../pgCadastro.php';</script>";
     }
 ?>

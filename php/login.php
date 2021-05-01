@@ -14,21 +14,22 @@
     //Verificacao de existencia de usuario
     $sql = "SELECT nome FROM usuarios WHERE email = '$email' AND senha = '$senha';";
     $result = mysqli_query($conexao, $sql);
+
+    include("fimDeConexao.php");
     
     if ($result == true){
         $linha = mysqli_fetch_assoc($result);
 
+        //Iniciar Sessao
         session_start();
 
         $_SESSION["login"] = true;
         $_SESSION["nome"] = $linha["nome"];
 
-        include("fimDeConexao.php");
         echo "<script>window.location.href = '../pgChat.php';</script>";
     } else{
         $_SESSION["tryLogin"] = true;
 
-        include("fimDeConexao.php");
         echo "<script>window.location.href = '../pgLogin.php';</script>";
     }
 ?>
