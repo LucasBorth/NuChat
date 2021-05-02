@@ -70,6 +70,10 @@ h1 {
     border-radius: 50%;
 }
 
+#mensagem {
+    max-width: 75%;
+}
+
 #logo {
     height: 50px;
     width: 50px;
@@ -81,6 +85,11 @@ h1 {
 
 .white-font {
     color: white;
+}
+
+.time-font {
+    font-size: 0.8em;
+    float: right;
 }
 
 /* Strucuture of footer and header */
@@ -169,6 +178,17 @@ h1 {
         margin-right: auto;
     }
 
+    .left-align {
+        display: block;
+        margin-right: auto;
+    }
+
+    .right-align {
+        display: block;
+        margin-left: auto;
+        text-align: right;
+    }
+
 .align-center {
     display: flex;
     align-items: center;
@@ -179,10 +199,6 @@ h1 {
         display: flex;
         align-items: flex-start;
         justify-content: center;    
-    }
-
-    .align-right {
-        float: right;
     }
 
 .no-margin {
@@ -246,6 +262,7 @@ h1 {
         border-radius: 5px;
         border: 2px solid #d3d3d3;
         overflow: hidden;
+        color: white;
     }
 
 input {
@@ -261,3 +278,12 @@ input {
     input[type="checkbox"] {
         width: auto;
     }
+
+.bottom-margin {
+    border-bottom: 1px solid #e3e4e2;
+}
+
+.scroll {
+    overflow-y: scroll;
+    height: 450px;
+}

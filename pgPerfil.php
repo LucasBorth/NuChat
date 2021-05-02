@@ -13,7 +13,7 @@
         <h4 class="purple-font logo">NuChat</h4>
         <a href="index.html"><button class="secondary-button">Sair</button></a>
         <a href="pgEncontrar.php"><button class="secondary-button">Encontrar</button></a>
-        <a href="#Chat"><button class="secondary-button">Conversas</button></a>
+        <a href="pgChat.php"><button class="secondary-button">Conversas</button></a>
         <a href="pgPerfil.php"><button class="primary-button">Eu</button></a>
     </header>
 
@@ -39,7 +39,7 @@
     </div>
 
     <div class="align-top middle-margin">
-        <div class="card middle-padding margin-right" style="width: 27.5%;">
+        <div class="card middle-padding margin-right scroll" style="width: 27.5%;">
             <div class="align-center">
                 <h2 class="no-margin">Sobre</h2>
             </div>
@@ -56,7 +56,7 @@
                 <p>Está <strong>Solteiro</strong></p>
             </div>
         </div>
-        <div class="card middle-padding" style="width: 27.5%;">
+        <div class="card middle-padding scroll" style="width: 27.5%;">
             <div class="align-center">
                 <h2 class="no-margin">Contatos(3)</h2>
             </div>
@@ -65,15 +65,15 @@
             </div>
             <div class="small-margin">
                 <div class="container container-size">
-                    <img class="vertical-align" src="files/perfil.png" alt="Perfil" id="profile">
+                    <img class="vertical-align" src="files/profile-picture.png" alt="Perfil" id="profile">
                     <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
                 </div>
                 <div class="container container-size">
-                    <img class="vertical-align" src="files/perfil.png" alt="Perfil" id="profile">
+                    <img class="vertical-align" src="files/profile-picture.png" alt="Perfil" id="profile">
                     <a href="pgPerfil.php"><button class="secondary-button">Lucas Borth</button></a>
                 </div>
                 <div class="container container-size">
-                    <img class="vertical-align" src="files/perfil.png" alt="Perfil" id="profile">
+                    <img class="vertical-align" src="files/profile-picture.png" alt="Perfil" id="profile">
                     <a href="pgPerfil.php"><button class="secondary-button">Baiano</button></a>
                 </div>
             </div>
