@@ -13,7 +13,7 @@
         <h4 class="purple-font logo">NuChat</h4>
         <a href="index.html"><button class="secondary-button">Sair</button></a>
         <a href="pgEncontrar.php"><button class="primary-button">Encontrar</button></a>
-        <a href="#Chat"><button class="secondary-button">Conversas</button></a>
+        <a href="pgChat.php"><button class="secondary-button">Conversas</button></a>
         <a href="pgPerfil.php"><button class="secondary-button">Eu</button></a>
     </header>
 

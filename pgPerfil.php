@@ -39,7 +39,7 @@
     </div>
 
     <div class="align-top middle-margin">
-        <div class="card middle-padding margin-right scroll" style="width: 27.5%;">
+        <div class="card middle-padding margin-right scroll sobre-size" style="width: 27.5%;">
             <div class="align-center">
                 <h2 class="no-margin">Sobre</h2>
             </div>
@@ -56,7 +56,7 @@
                 <p>Está <strong>Solteiro</strong></p>
             </div>
         </div>
-        <div class="card middle-padding scroll" style="width: 27.5%;">
+        <div class="card middle-padding scroll sobre-size" style="width: 27.5%;">
             <div class="align-center">
                 <h2 class="no-margin">Contatos(3)</h2>
             </div>

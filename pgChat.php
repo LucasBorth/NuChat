@@ -19,40 +19,41 @@
     </header>
 
     <div class="align-top middle-margin">
+        
         <!-- Contatos -->
-        <div class="card middle-padding margin-right scroll" style="width: 30%;">
-            <div class="small-margin small-padding">
-                <div class="align-center">
-                    <h2 class="no-margin">Contatos(3)</h2>
-                </div>
-                <div class="align-center">
-                    <input type="text" placeholder="Pesquisar..">
-                    <button class="primary-button">Pesquisar</button>
-                </div>
+        <div class="margin-right" style="width: 30%;">
+            <div class="purple-card align-center middle-padding small-vertical-margin">
+                <h2 class="white-font no-margin">Contatos(3)</h2>
             </div>
-            <div class="small-margin">
-                <div class="container container-size bottom-margin">
-                    <img class="vertical-align" src="files/profile-picture.png" alt="Perfil" id="profile">
-                    <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
-                </div>
-                <div class="container container-size bottom-margin">
-                    <img class="vertical-align" src="files/profile-picture.png" alt="Perfil" id="profile">
-                    <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
-                </div>
-                <div class="container container-size bottom-margin">
-                    <img class="vertical-align" src="files/profile-picture.png" alt="Perfil" id="profile">
-                    <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
+            <div class="purple-card align-center small-padding small-vertical-margin">
+                <input class="margin-right" type="text" placeholder="Pesquisar..">
+                <button class="primary-button">Pesquisar</button>
+            </div>
+            <div class="card scroll contatos-size">
+                <div class="small-margin">
+                    <div class="container container-size bottom-margin">
+                        <img class="vertical-align" src="files/profile-picture.png" alt="Perfil" id="profile">
+                        <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
+                    </div>
+                    <div class="container container-size bottom-margin">
+                        <img class="vertical-align" src="files/profile-picture.png" alt="Perfil" id="profile">
+                        <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
+                    </div>
+                    <div class="container container-size bottom-margin">
+                        <img class="vertical-align" src="files/profile-picture.png" alt="Perfil" id="profile">
+                        <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Mensagens -->
         <div style="width: 50%;">
-            <div class="card middle-padding scroll">
-                <div class="align-center bottom-margin small-padding">
-                    <img class="small-horizontal-margin" src="files/profile-picture.png" alt="" id="profile">
-                    <h2 class="no-margin">João Cavalcante</h2>
-                </div>
+            <div class="purple-card align-center small-padding small-vertical-margin">
+                <img class="small-horizontal-margin" src="files/profile-picture.png" alt="" id="profile">
+                <h2 class="white-font no-margin">João Cavalcante</h2>
+            </div>
+            <div class="card scroll message-size small-vertical-margin">
                 <div class="middle-margin">
                     <div class="card left-align small-padding small-margin" id="mensagem">
                         <p class="purple-font">Jeú Chaves</p>
@@ -86,8 +87,10 @@
                     </div>
                 </div>
             </div>
-            <div class="card">
-                <textarea name="" id="" cols="30" rows="1"></textarea>
+            <div class="purple-card align-center small-padding message-box">
+                <button class="primary-button"><img src="files/clipe.png" alt=""></button>
+                <input type="text" id="txtMensagem" name="txtMensagem" placeholder="Digite uma mensagem">
+                <button class="primary-button">Enviar</button>
             </div>
         </div>
 </body>

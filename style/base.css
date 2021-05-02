@@ -152,8 +152,8 @@ h1 {
     }
 
     .small-vertical-margin {
-        margin-top: 1.7em;
-        margin-bottom: 1.7em;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
     }
 
 .container {
@@ -223,6 +223,22 @@ h1 {
         background-color: #530082;
     }
 
+    .primary-icon-button {
+        background-color: #9400D3;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1em;
+        cursor: pointer;
+        transition-duration: 0.4s;
+    }
+
+    .primary-icon-button:hover {
+        background-color: #530082;
+    }
+
 .secondary-button {
     background-color: #f8f8f8;
     color: #808080;
@@ -260,9 +276,14 @@ h1 {
     .purple-card { 
         background-color: #530082;
         border-radius: 5px;
-        border: 2px solid #d3d3d3;
         overflow: hidden;
         color: white;
+    }
+
+    .purple-card input {
+        background-color: #530082;
+        color: white;
+        border: none;
     }
 
 input {
@@ -279,11 +300,38 @@ input {
         width: auto;
     }
 
+    input[type="submit"] {
+        width: auto;
+    }
+
 .bottom-margin {
     border-bottom: 1px solid #e3e4e2;
 }
 
 .scroll {
     overflow-y: scroll;
-    height: 450px;
+}
+
+/* Caixa de mensagem */
+.message-box input {
+    background-color: #530082;
+    border: none;
+    color: white;
+}
+
+    .message-box img {
+        width: 15px;
+        height: 15px;
+    }
+
+.contatos-size {
+    height: 350px;
+}
+
+.message-size {
+    height: 350px;
+}
+
+.sobre-size {
+    height: 400px;
 }
