@@ -13,8 +13,8 @@
     <header class="navbar shadow small-padding">
         <img class="logo" id="logo" src="images/logo.svg" alt="Logo">
         <h4 class="purple-font logo">NuChat</h4>
-        <a href="pgCadastro.php"><button class="primary-button">Cadastrar-se</button></a>
-        <a href="pgLogin.php"><button class="secondary-button">Login</button></a>
+        <a href="app/view/pgCadastrar.php"><button class="primary-button">Cadastrar-se</button></a>
+        <a href="app/view/pgLogar.php"><button class="secondary-button">Login</button></a>
     </header>
 
     <div class="align-center middle-margin">
@@ -25,7 +25,7 @@
                 Mergulhe em um mundo onde o virtual lhe proporciona 
                 experiências vivas.
             </p>
-            <a href="pgCadastro.php"><button class="primary-button medium-margin">Cadastrar-se</button></a>
+            <a href="app/view/pgCadastrar.php"><button class="primary-button medium-margin">Cadastrar-se</button></a>
         </div>
         <div class="small-horizontal-margin" >
             <img src="images/gato.png" alt="Cat and Computer" style="width: auto; height: 400px;">
