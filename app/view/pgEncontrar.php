@@ -10,12 +10,12 @@
 </head>
 <body>
     <header class="navbar shadow small-padding">
-        <img class="logo" id="logo" src="files/icon.svg" alt="Logo">
+        <img class="logo" id="logo" src="../../images/logo.svg" alt="Logo">
         <h4 class="purple-font logo">NuChat</h4>
-        <a href="index.html"><button class="secondary-button">Sair</button></a>
+        <a href="../../index.php"><button class="secondary-button">Sair</button></a>
         <a href="pgEncontrar.php"><button class="primary-button">Encontrar</button></a>
-        <a href="pgChat.php"><button class="secondary-button">Conversas</button></a>
-        <a href="pgPerfil.php"><button class="secondary-button">Eu</button></a>
+        <a href="pgConversar.php"><button class="secondary-button">Conversas</button></a>
+        <a href="pgEditarPerfil.php"><button class="secondary-button">Editar Perfil</button></a>
     </header>
 
     <div class="align-center middle-margin">
@@ -28,43 +28,43 @@
             </div>
             <div class="align-center">
                 <div class="middle-padding small-margin">
-                    <img class="horizontal-align" src="files/perfil.png" alt="" id="profile">
+                    <img class="horizontal-align" src="../../images/foto-perfil.png" alt="" id="profile">
                     <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
                 </div>
                 <div class="middle-padding small-margin">
-                    <img class="horizontal-align" src="files/perfil.png" alt="" id="profile">
+                    <img class="horizontal-align" src="../../images/foto-perfil.png" alt="" id="profile">
                     <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
                 </div>
                 <div class="middle-padding small-margin">
-                    <img class="horizontal-align" src="files/perfil.png" alt="" id="profile">
-                    <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
-                </div>
-            </div>
-            <div class="align-center">
-                <div class="middle-padding small-margin">
-                    <img class="horizontal-align" src="files/perfil.png" alt="" id="profile">
-                    <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
-                </div>
-                <div class="middle-padding small-margin">
-                    <img class="horizontal-align" src="files/perfil.png" alt="" id="profile">
-                    <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
-                </div>
-                <div class="middle-padding small-margin">
-                    <img class="horizontal-align" src="files/perfil.png" alt="" id="profile">
+                    <img class="horizontal-align" src="../../images/foto-perfil.png" alt="" id="profile">
                     <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
                 </div>
             </div>
             <div class="align-center">
                 <div class="middle-padding small-margin">
-                    <img class="horizontal-align" src="files/perfil.png" alt="" id="profile">
+                    <img class="horizontal-align" src="../../images/foto-perfil.png" alt="" id="profile">
                     <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
                 </div>
                 <div class="middle-padding small-margin">
-                    <img class="horizontal-align" src="files/perfil.png" alt="" id="profile">
+                    <img class="horizontal-align" src="../../images/foto-perfil.png" alt="" id="profile">
                     <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
                 </div>
                 <div class="middle-padding small-margin">
-                    <img class="horizontal-align" src="files/perfil.png" alt="" id="profile">
+                    <img class="horizontal-align" src="../../images/foto-perfil.png" alt="" id="profile">
+                    <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
+                </div>
+            </div>
+            <div class="align-center">
+                <div class="middle-padding small-margin">
+                    <img class="horizontal-align" src="../../images/foto-perfil.png" alt="" id="profile">
+                    <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
+                </div>
+                <div class="middle-padding small-margin">
+                    <img class="horizontal-align" src="../../images/foto-perfil.png" alt="" id="profile">
+                    <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
+                </div>
+                <div class="middle-padding small-margin">
+                    <img class="horizontal-align" src="../../images/foto-perfil.png" alt="" id="profile">
                     <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
                 </div>
             </div>

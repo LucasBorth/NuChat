@@ -24,7 +24,7 @@
             </div>
             <div class="align-center small-margin">
                 <a href="pgCadastrar.php"><button class="secondary-button">Criar conta</button></a>
-                <input type="submit" class="primary-button" value="Conectar-se">
+                <a href="pgConversar.php"><button class="primary-button">Entrar</button></a>
             </div>
         </div>
     </div>

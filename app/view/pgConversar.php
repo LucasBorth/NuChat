@@ -12,7 +12,7 @@
     <header class="navbar shadow small-padding">
         <img class="logo" id="logo" src="../../images/logo.svg" alt="Logo">
         <h4 class="purple-font logo">NuChat</h4>
-        <a href="index.html"><button class="secondary-button">Sair</button></a>
+        <a href="../../index.php"><button class="secondary-button">Sair</button></a>
         <a href="pgEncontrar.php"><button class="secondary-button">Encontrar</button></a>
         <a href="pgConversar.php"><button class="primary-button">Conversas</button></a>
         <a href="pgEditarPerfil.php"><button class="secondary-button">Editar Perfil</button></a>
