@@ -11,7 +11,7 @@
         echo "<script>alert('Dados de recuparação de conta não entrados, retornando a página principal');</script>";
 
         echo "<script>window.location.href = '../index.html';</script>";
-    } else{
+    } else { 
         if ($_SESSION["recuperarSenha"] == true){
             if ($_SESSION["recuperarSenhaCodigoIgual"] == true){
                 $email = $_SESSION["email"];
