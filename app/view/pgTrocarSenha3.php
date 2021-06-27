@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NuChat</title>
     
-    <link rel="stylesheet" type="text/css" href="style/base.css">
+    <link rel="stylesheet" type="text/css" href="../../publico/estilos/estilo.css">
 </head>
 <body>
     <div class="align-center middle-margin">
