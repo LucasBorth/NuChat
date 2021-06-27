@@ -10,7 +10,7 @@
 </head>
 <body>
     <header class="navbar shadow small-padding">
-        <img class="logo" id="logo" src="files/icon.svg" alt="Logo">
+        <img class="logo" id="logo" src="../../images/logo.svg" alt="Logo">
         <h4 class="purple-font logo">NuChat</h4>
         <a href="index.html"><button class="secondary-button">Sair</button></a>
         <a href="pgEncontrar.php"><button class="secondary-button">Encontrar</button></a>
@@ -32,15 +32,15 @@
             <div class="card scroll contatos-size">
                 <div class="small-margin">
                     <div class="container container-size bottom-margin">
-                        <img class="vertical-align" src="files/profile-picture.png" alt="Perfil" id="profile">
+                        <img class="vertical-align" src="../../images/foto-perfil.png" alt="Perfil" id="profile">
                         <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
                     </div>
                     <div class="container container-size bottom-margin">
-                        <img class="vertical-align" src="files/profile-picture.png" alt="Perfil" id="profile">
+                        <img class="vertical-align" src="../../images/foto-perfil.png" alt="Perfil" id="profile">
                         <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
                     </div>
                     <div class="container container-size bottom-margin">
-                        <img class="vertical-align" src="files/profile-picture.png" alt="Perfil" id="profile">
+                        <img class="vertical-align" src="../../images/foto-perfil.png" alt="Perfil" id="profile">
                         <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
         <!-- Mensagens -->
         <div style="width: 50%;">
             <div class="purple-card align-center small-padding small-vertical-margin">
-                <img class="small-horizontal-margin" src="files/profile-picture.png" alt="" id="profile">
+                <img class="small-horizontal-margin" src="../../images/foto-perfil.png" alt="" id="profile">
                 <h2 class="white-font no-margin">João Cavalcante</h2>
             </div>
             <div class="card scroll message-size small-vertical-margin">
@@ -88,7 +88,6 @@
                 </div>
             </div>
             <div class="purple-card align-center small-padding message-box">
-                <button class="primary-button"><img src="files/clipe.png" alt=""></button>
                 <input type="text" id="txtMensagem" name="txtMensagem" placeholder="Digite uma mensagem">
                 <button class="primary-button">Enviar</button>
             </div>
