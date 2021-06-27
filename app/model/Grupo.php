@@ -24,7 +24,11 @@ class Grupo {
     }
 
     public static function alterarGrupo(Grupo $grupo) {
-
+        $db = Banco::getInstance();
+        $stmt = $db->prepare('UPDATE Grupos SET descricao = :descricao WHERE email_grupo = :email_grupo');
+        $stmt->bindValue(':descricao', $grupo -> __get("descricao"));
+        $stmt->bindValue(':email_grupo', $grupo -> __get("email_grupo"));
+        $stmt->execute();
     }
 }
 
