@@ -1,7 +1,20 @@
 <?php
 
-    $email = $_POST["txEmail"];
-    $senha = md5($_POST["txSenha"]);
+require 'app/model/Usuario.php';
+
+$email = $_POST["email"];
+$senha = md5($_POST["senha"]);
+
+class Login {
+
+    private static Usuario $usuarioLogado;
+
+    public static function logar($email, $senha) {
+        
+    } 
+
+}
+    
 
     //Verificacao de existencia de conteudo
     if ((isset($email) && isset($senha)) != true){

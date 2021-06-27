@@ -19,8 +19,8 @@
                 <h2>Fazer Login</h2>
             </div>
             <div class="small-margin">
-                <input type="email" id="login" name="txEmail" placeholder="Digite seu e-mail">
-                <input type="password" id="password" name="txSenha" placeholder="Digite sua senha">
+                <input type="email" id="login" name="email" placeholder="Digite seu e-mail">
+                <input type="password" id="password" name="senha" placeholder="Digite sua senha">
             </div>
             <div class="align-center small-margin">
                 <a href="pgCadastrar.php"><button class="secondary-button">Criar conta</button></a>

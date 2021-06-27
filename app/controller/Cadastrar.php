@@ -1,4 +1,5 @@
 <?php
+
     $nome = $_POST["txNome"];
     $email = $_POST["txEmail"];
     $senha = md5($_POST["txSenha"]);

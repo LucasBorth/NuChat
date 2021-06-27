@@ -86,6 +86,9 @@ class Usuario {
         }
     }
 
+    public function igual(String $email, String $senha) {
+        return $this->email === $email && $this->senha === $senha;
+    }
 }
 
 ?>
