@@ -12,24 +12,22 @@
     <div class="align-center middle-margin">
         <div class="card shadow middle-padding" style="width: 30%;">
             <div class="align-center">
-                <img src="files/icon.svg" alt="Logo" id="logo">
+                <img src="../../images/logo.svg" alt="Logo" id="logo">
                 <h4 class="purple-font">NuChat</h4>
             </div>
             <div class="align-center">
                 <h2>Fazer Login</h2>
             </div>
-            <div class="small-margin">
-                <form action="php/login.php" method="POST">
+            <form action="php/login.php" method="POST">
+                <div class="small-margin">
                     <input type="email" id="login" name="txEmail" placeholder="Digite seu e-mail" required>
                     <input type="password" id="password" name="txSenha" placeholder="Digite sua senha" required>
-                    <a class="purple-font" href="pgEsqueciASenha1.php">Esqueceu sua senha?</a>
-                
-            </div>
-            <div class="align-center small-margin">
-                <a href="pgCadastro.php"><button class="secondary-button">Criar conta</button></a>
-                <input type="submit" class="primary-button" value="Conectar-se">
-            </div>
-                </form>
+                </div>
+                <div class="align-center small-margin">
+                    <a href="pgCadastro.php"><button class="secondary-button">Criar conta</button></a>
+                    <input type="submit" class="primary-button" value="Conectar-se">
+                </div>
+            </form>
         </div>
     </div>
 </body>
