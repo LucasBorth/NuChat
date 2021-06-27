@@ -53,7 +53,7 @@ class Mensagem {
     public static function buscarTodasMensagensPorRemetenteEDestinatario(int $id_remetente, int $id_destinatario) {
         $db = Banco::getInstance();
 
-        $stmt = $db->prepare('SELECT * FROM Mensagens WHERE id_remetente = :id_remetente AND id_destinatario = :id_destinatario');
+        $stmt = $db->prepare('SELECT * FROM Mensagens WHERE id_remetente = :id_remetente AND id_destinatario = :id_destinatario ORDER BY DESC');
         $stmt->bindValue(':id_remetente', $id_remetente);
         $stmt->bindValue(':id_destinatario', $id_destinatario);
         $stmt->execute();
