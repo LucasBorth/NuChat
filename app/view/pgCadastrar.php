@@ -24,7 +24,7 @@
                     <input type="text" id="login" name="txEmail" placeholder="E-mail">
                     <input type="password" id="password" name="txSenha" placeholder="Digite sua senha">
                     <input type="password" id="password" name="txConfirmaSenha" placeholder="Confirme sua senha">
-                    <a href="pgMensagens.php"><button class="primary-button">Cadastrar</button></a>
+                    <a href="pgConversar.php"><button class="primary-button">Cadastrar</button></a>
                     <a href="../../index.php"><button class="secondary-button">Cancelar</button></a>
                 </div>
             </div>       
