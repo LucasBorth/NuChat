@@ -28,9 +28,9 @@ class Mensagem {
     public static function salvarMensagem(Mensagem $mensagem){
         $db = Banco::getInstance();
         $stmt = $db->prepare('INSERT INTO Mensagens (text_mensagem, email_remetente, email_destinatario) VALUES (:text_mensagem, :email_remetente, :email_destinatario)');
-        $stmt->bindValue(':email', $mensagem -> text_mensagem);
-        $stmt->bindValue(':senha', $mensagem -> email_remetente);
-        $stmt->bindValue(':nome', $mensagem -> email_destinatario);
+        $stmt->bindValue(':text_mensagem', $mensagem -> text_mensagem);
+        $stmt->bindValue(':email_remetente', $mensagem -> email_remetente);
+        $stmt->bindValue(':email_destinatario', $mensagem -> email_destinatario);
         $stmt->execute();
     }
 
@@ -43,19 +43,19 @@ class Mensagem {
 
     public static function alterarMensagem(Mensagem $mensagem) {
         $db = Banco::getInstance();
-        $stmt = $db->prepare('UPDATE Usuarios SET text_mensagem = :text_mensagem WHERE id_remetente = :id_remetente AND id_destinatario = :id_destinatario');
+        $stmt = $db->prepare('UPDATE Usuarios SET text_mensagem = :text_mensagem WHERE email_remetente = :email_remetente AND email_destinatario = :email_destinatario');
         $stmt->bindValue(':text_mensagem', $mensagem -> __get("text_mensagem"));
-        $stmt->bindValue(':id_remetente', $mensagem -> __get("id_remetente"));
-        $stmt->bindValue(':id_destinatario', $mensagem -> __get("id_destinatario"));
+        $stmt->bindValue(':email_remetente', $mensagem -> __get("email_remetente"));
+        $stmt->bindValue(':email_destinatario', $mensagem -> __get("email_destinatario"));
         $stmt->execute();
     }
 
-    public static function buscarTodasMensagensPorRemetenteEDestinatario(int $id_remetente, int $id_destinatario) {
+    public static function buscarTodasMensagensPorRemetenteEDestinatario(String $email_remetente, String $email_destinatario) {
         $db = Banco::getInstance();
 
-        $stmt = $db->prepare('SELECT * FROM Mensagens WHERE id_remetente = :id_remetente AND id_destinatario = :id_destinatario ORDER BY DESC');
-        $stmt->bindValue(':id_remetente', $id_remetente);
-        $stmt->bindValue(':id_destinatario', $id_destinatario);
+        $stmt = $db->prepare('SELECT * FROM Mensagens WHERE email_remetente = :email_remetente AND email_destinatario = :email_destinatario ORDER BY DESC');
+        $stmt->bindValue(':email_remetente', $email_remetente);
+        $stmt->bindValue(':email_destinatario', $email_destinatario);
         $stmt->execute();
 
         $resultado = $stmt->fetchAll();
@@ -64,7 +64,7 @@ class Mensagem {
             $mensagens = array();
             foreach ($resultado as $value) {
                 $mensagem = new Mensagem($value['text_mensagem'], $value['email_remetente'], $value['email_destinatario']);
-                $mensagem -> __set("id_mensagem", $value['id_mensagem']);
+                $mensagem -> __set("email_mensagem", $value['email_mensagem']);
                 $mensagem -> __set("data_mensagem", $value['data_mensagem']);
                 array_push($mensagens, $mensagem);
             }

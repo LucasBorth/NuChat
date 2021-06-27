@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS Grupos (
-    id_grupo INTEGER PRIMARY KEY AUTOINCREMENT,
+    email_grupo TEXT PRIMARY KEY,
     titulo TEXT NOT NULL,
     descricao TEXT
 );
