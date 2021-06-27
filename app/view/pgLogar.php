@@ -18,16 +18,14 @@
             <div class="align-center">
                 <h2>Fazer Login</h2>
             </div>
-            <form action="php/login.php" method="POST">
-                <div class="small-margin">
-                    <input type="email" id="login" name="txEmail" placeholder="Digite seu e-mail">
-                    <input type="password" id="password" name="txSenha" placeholder="Digite sua senha">
-                </div>
-                <div class="align-center small-margin">
-                    <a href="pgCadastro.php"><button class="secondary-button">Criar conta</button></a>
-                    <input type="submit" class="primary-button" value="Conectar-se">
-                </div>
-            </form>
+            <div class="small-margin">
+                <input type="email" id="login" name="txEmail" placeholder="Digite seu e-mail">
+                <input type="password" id="password" name="txSenha" placeholder="Digite sua senha">
+            </div>
+            <div class="align-center small-margin">
+                <a href="pgCadastrar.php"><button class="secondary-button">Criar conta</button></a>
+                <input type="submit" class="primary-button" value="Conectar-se">
+            </div>
         </div>
     </div>
 </body>
