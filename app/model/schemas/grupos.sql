@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS Grupos (
+    id_grupo INTEGER PRIMARY KEY AUTOINCREMENT,
+    titulo TEXT NOT NULL,
+    descricao TEXT
+);
