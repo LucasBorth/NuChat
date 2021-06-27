@@ -6,6 +6,7 @@
     <title>NuChat</title>
     
     <link rel="stylesheet" type="text/css" href="../../publico/estilos/estilo.css"> 
+    <link rel="shortcut icon" type="imagex/svg" href="images/logo.svg">
 </head>
 <body>
     <header class="navbar shadow small-padding">

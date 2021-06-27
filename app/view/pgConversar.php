@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../publico/estilos/estilo.css">
-    <link rel="sortcut icon" href="files/icon.svg" type="image/x-icon">
+    <link rel="shortcut icon" type="imagex/svg" href="images/logo.svg">
     <title>NuChat</title>
 </head>
 <body>
