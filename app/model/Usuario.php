@@ -28,7 +28,7 @@ class Usuario {
         $stmt = $db->prepare('INSERT INTO Usuarios (email, senha, nome_usuario) VALUES (:email, :senha, :nome_usuario)');
         $stmt->bindValue(':email', $this->email);
         $stmt->bindValue(':senha', $this->senha);
-        $stmt->bindValue(':nome', $this->nome_usuario);
+        $stmt->bindValue(':nome_usuario', $this->nome_usuario);
         $stmt->execute();
 
     }

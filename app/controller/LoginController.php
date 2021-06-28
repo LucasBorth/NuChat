@@ -38,15 +38,12 @@ class LoginController extends Controller {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $usuario = new Usuario($_POST['email'], $_POST['nome_usuario'], $_POST['senha']);
             
-            $usuario->salvarUsuario();
-            /*
             try {
                 $usuario->salvarUsuario();
                 header('Location: index.php?email=' . $_POST['email'] . '&mensagem=Usuário cadastrado com sucesso!');
             } catch(PDOException $erro) {
                 header('Location: index.php?acao=cadastrar&mensagem=Email já cadastrado!');
             }
-            */
         }
         $this->view('pgCadastrar');
     }
