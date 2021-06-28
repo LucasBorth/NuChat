@@ -29,7 +29,7 @@
                             echo '
                             <div class="container container-size bottom-margin">
                                 <img class="vertical-align" src="images/foto-perfil.png" alt="Perfil" id="profile">
-                                <a href="pgPerfil.php"><button class="secondary-button">' . $usuarios[$i]->__get('nome_usuario') . '</button></a>
+                                <a href="pgPerfil.php?acao=perfil&email=' . $usuarios[$i]->__get('email') . '"><button class="secondary-button">' . $usuarios[$i]->__get('nome_usuario') . '</button></a>
                             </div>
                             ';
                         }
