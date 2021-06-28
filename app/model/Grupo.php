@@ -4,9 +4,9 @@ include_once("Banco.php");
 
 class Grupo {
     
-    private int $email_grupo;
-    private String $titulo;
-    private String $descricao;
+    private $email_grupo;
+    private $titulo;
+    private $descricao;
 
     function __construct(String $titulo, String $descricao)
     {

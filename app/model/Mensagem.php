@@ -4,11 +4,11 @@ include_once("Banco.php");
 
 class Mensagem {
 
-    private int $id_mensagem;
-    private String $text_mensagem;
-    private String $email_remetente;
-    private String $email_destinatario;
-    private DateTime $data_mensagem;
+    private $id_mensagem;
+    private $text_mensagem;
+    private $email_remetente;
+    private $email_destinatario;
+    private $data_mensagem;
 
     function __construct(String $text_mensagem, String $email_remetente, String $email_destinatario)
     {
