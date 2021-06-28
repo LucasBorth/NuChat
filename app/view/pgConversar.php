@@ -20,7 +20,7 @@
             <div class="card scroll contatos-size">
                 <div class="small-margin">
                     <?php 
-                    
+
                         include_once('app/model/Usuario.php');
                         $usuarios = Usuario::buscarTodos();
                         $quantidade_usuarios = count($usuarios);
@@ -42,7 +42,7 @@
         <div style="width: 50%;">
             <div class="purple-card align-center small-padding small-vertical-margin">
                 <img class="small-horizontal-margin" src="images/foto-perfil.png" alt="" id="profile">
-                <h2 class="white-font no-margin">João Cavalcante</h2>
+                <h2 class="white-font no-margin">Nome Usuario</h2>
             </div>
             <div class="card scroll message-size small-vertical-margin">
                 <div class="middle-margin">
