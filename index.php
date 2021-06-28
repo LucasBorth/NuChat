@@ -19,6 +19,12 @@ switch ($_GET['acao']) {
         break;
     case 'sair':
         $controller->sair();
+    case 'encontrar':
+        $controller->encontrar();
+        break;
+    case 'editar':
+        $controller->editar();
+        break;
     default:
         $controller->logar();
 }

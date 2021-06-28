@@ -1,29 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../publico/estilos/estilo.css">
-    <link rel="shortcut icon" type="imagex/svg" href="../../images/logo.svg">
+    <?php include('app/view/head.php') ?>
     <title>NuChat</title>
 </head>
 <body>
-    <header class="navbar shadow small-padding">
-        <img class="logo" id="logo" src="../../images/logo.svg" alt="Logo">
-        <h4 class="purple-font logo">NuChat</h4>
-        <a href="../../index.php"><button class="secondary-button">Sair</button></a>
-        <a href="pgEncontrar.php"><button class="secondary-button">Encontrar</button></a>
-        <a href="pgConversar.php"><button class="primary-button">Conversas</button></a>
-        <a href="pgEditarPerfil.php"><button class="secondary-button">Editar Perfil</button></a>
-    </header>
-
+    <?php include('app/view/navbar.php') ?>
     <div class="align-top middle-margin">
         
         <!-- Contatos -->
         <div class="margin-right" style="width: 30%;">
             <div class="purple-card align-center middle-padding small-vertical-margin">
-                <h2 class="white-font no-margin">Contatos(3)</h2>
+                <h2 class="white-font no-margin">Mensagens</h2>
             </div>
             <div class="purple-card align-center small-padding small-vertical-margin">
                 <input class="margin-right" type="text" placeholder="Pesquisar..">
@@ -31,18 +19,21 @@
             </div>
             <div class="card scroll contatos-size">
                 <div class="small-margin">
-                    <div class="container container-size bottom-margin">
-                        <img class="vertical-align" src="../../images/foto-perfil.png" alt="Perfil" id="profile">
-                        <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
-                    </div>
-                    <div class="container container-size bottom-margin">
-                        <img class="vertical-align" src="../../images/foto-perfil.png" alt="Perfil" id="profile">
-                        <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
-                    </div>
-                    <div class="container container-size bottom-margin">
-                        <img class="vertical-align" src="../../images/foto-perfil.png" alt="Perfil" id="profile">
-                        <a href="pgPerfil.php"><button class="secondary-button">João Cavalcante</button></a>
-                    </div>
+                    <?php 
+                    
+                        include_once('app/model/Usuario.php');
+                        $usuarios = Usuario::buscarTodos();
+                        $quantidade_usuarios = count($usuarios);
+
+                        for($i = 0; $i < $quantidade_usuarios; $i++) {
+                            echo '
+                            <div class="container container-size bottom-margin">
+                                <img class="vertical-align" src="images/foto-perfil.png" alt="Perfil" id="profile">
+                                <a href="pgPerfil.php"><button class="secondary-button">' . $usuarios[$i]->__get('nome_usuario') . '</button></a>
+                            </div>
+                            ';
+                        }
+                    ?>
                 </div>
             </div>
         </div>
@@ -50,7 +41,7 @@
         <!-- Mensagens -->
         <div style="width: 50%;">
             <div class="purple-card align-center small-padding small-vertical-margin">
-                <img class="small-horizontal-margin" src="../../images/foto-perfil.png" alt="" id="profile">
+                <img class="small-horizontal-margin" src="images/foto-perfil.png" alt="" id="profile">
                 <h2 class="white-font no-margin">João Cavalcante</h2>
             </div>
             <div class="card scroll message-size small-vertical-margin">

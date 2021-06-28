@@ -65,6 +65,37 @@ class LoginController extends Controller {
         header('Location: index.php?mensagem=Usuário deslogado com sucesso!');
     }
 
+    public function encontrar() {
+        if (!$this->usuarioLogado) {
+            header('Location: index.php?acao=entrar&mensagem=Você precisa se identificar primeiro');
+            return;
+        }
+        $this->view('pgEncontrar', $this->usuarioLogado);
+    }
+
+    public function editar() {
+        
+        if (!$this->usuarioLogado) {
+            header('Location: index.php?acao=entrar&mensagem=Você precisa se identificar primeiro');
+            return;
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $usuario = $this->usuarioLogado;
+            $usuario->__set('senha', $_POST['senha']);
+            $usuario->__set('nome_usuario', $_POST['nome_usuario']);
+            
+            try {
+                $usuario->alterarUsuario();
+                header('Location: index.php?acao=perfil&mensagem=Usuario alterado com sucesso!');
+            } catch(PDOException $erro) {
+                header('Location: index.php?acao=editar&mensagem=Nao foi possivel alterar!');
+            }
+        }
+
+        $this->view('pgEditarPerfil', $this->usuarioLogado);
+    }
+
 }
 
 ?>

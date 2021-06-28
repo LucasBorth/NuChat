@@ -1,23 +1,10 @@
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include('app/view/head.php') ?>
     <title>NuChat</title>
-    
-    <link rel="stylesheet" type="text/css" href="../../publico/estilos/estilo.css">
-    <l<link rel="shortcut icon" type="imagex/svg" href="../../images/logo.svg">
 </head>
 <body>
-    <header class="navbar shadow small-padding">
-        <img class="logo" id="logo" src="../../images/logo.svg" alt="Logo">
-        <h4 class="purple-font logo">NuChat</h4>
-        <a href="../../index.php"><button class="secondary-button">Sair</button></a>
-        <a href="pgEncontrar.php"><button class="primary-button">Encontrar</button></a>
-        <a href="pgConversar.php"><button class="secondary-button">Conversas</button></a>
-        <a href="pgEditarPerfil.php"><button class="secondary-button">Editar Perfil</button></a>
-    </header>
-
+    <?php include('app/view/navbar.php') ?>
     <div class="align-center middle-margin">
         <div class="card middle-padding" style="width: 60%;">
             <div class="align-center">
