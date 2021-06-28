@@ -24,7 +24,7 @@
 			}
 			return self::$conexao;
 		}
-	
+		
 		/**
 		*  Função para criação do modelo do banco (tabela Usuários neste caso). 
 		*/

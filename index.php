@@ -1,3 +1,10 @@
+<?php 
+
+include_once('app/model/Banco.php');
+Banco::createSchema();
+
+?>
+
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
