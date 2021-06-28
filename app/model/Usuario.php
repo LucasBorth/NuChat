@@ -4,9 +4,9 @@ include_once("Banco.php");
 
 class Usuario {
 
-    private String $email;
-    private String $nome_usuario;
-    private String $senha;
+    private $email;
+    private $nome_usuario;
+    private $senha;
 
     function __construct(String $email, String $nome_usuario, String $senha)
     {
@@ -49,7 +49,7 @@ class Usuario {
         $stmt->execute();
     }
 
-    public static function buscarPorEmail(String $email) {
+    public static function buscarPorEmail(String $email){
         $db = Banco::getInstance();
 
         $stmt = $db->prepare('SELECT * FROM Usuarios WHERE email = :email');

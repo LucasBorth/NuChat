@@ -1,15 +1,3 @@
-<?php
-
-include_once __DIR__ . '/app/model/Banco.php';
-
-try {
-    Banco::createSchema();
-} catch (\Throwable $th) {
-    echo $th;
-    die(1);
-}
-
-?>
 
 <html lang="pt-br">
 <head>

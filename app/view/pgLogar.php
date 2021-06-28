@@ -18,14 +18,16 @@
             <div class="align-center">
                 <h2>Fazer Login</h2>
             </div>
-            <div class="small-margin">
-                <input type="email" id="login" name="email" placeholder="Digite seu e-mail">
-                <input type="password" id="password" name="senha" placeholder="Digite sua senha">
-            </div>
-            <div class="align-center small-margin">
-                <a href="pgCadastrar.php"><button class="secondary-button">Criar conta</button></a>
-                <a href="pgConversar.php"><button class="primary-button">Entrar</button></a>
-            </div>
+            <form action="../controller/Logar.php" method="POST">
+                <div class="small-margin">
+                    <input type="email" id="login" name="email" placeholder="Digite seu e-mail">
+                    <input type="password" id="password" name="senha" placeholder="Digite sua senha">
+                </div>
+                <div class="align-center small-margin">
+                    <a href="pgCadastrar.php"><button class="secondary-button">Criar conta</button></a>
+                    <button type="submit" class="primary-button">Entrar</button>
+                </div>
+            </form>
         </div>
     </div>
 </body>
