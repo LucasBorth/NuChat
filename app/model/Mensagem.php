@@ -1,6 +1,6 @@
 <?php
 
-include_once("Banco.php");
+include_once('app/model/Banco.php');
 
 class Mensagem {
 
@@ -53,9 +53,11 @@ class Mensagem {
     public static function buscarTodasMensagensPorRemetenteEDestinatario(String $email_remetente, String $email_destinatario) {
         $db = Banco::getInstance();
 
-        $stmt = $db->prepare('SELECT * FROM Mensagens WHERE email_remetente = :email_remetente AND email_destinatario = :email_destinatario ORDER BY DESC');
-        $stmt->bindValue(':email_remetente', $email_remetente);
-        $stmt->bindValue(':email_destinatario', $email_destinatario);
+        $stmt = $db->prepare('SELECT * FROM Mensagens WHERE (email_remetente = :email_remetente1 AND email_destinatario = :email_destinatario1) OR (email_remetente = :email_destinatario2 AND email_destinatario = :email_remetente2) ORDER BY data_mensagem ASC');
+        $stmt->bindValue(':email_remetente1', $email_remetente);
+        $stmt->bindValue(':email_destinatario1', $email_destinatario);
+        $stmt->bindValue(':email_destinatario2', $email_destinatario);
+        $stmt->bindValue(':email_remetente2', $email_remetente);
         $stmt->execute();
 
         $resultado = $stmt->fetchAll();
@@ -64,8 +66,6 @@ class Mensagem {
             $mensagens = array();
             foreach ($resultado as $value) {
                 $mensagem = new Mensagem($value['text_mensagem'], $value['email_remetente'], $value['email_destinatario']);
-                $mensagem -> __set("email_mensagem", $value['email_mensagem']);
-                $mensagem -> __set("data_mensagem", $value['data_mensagem']);
                 array_push($mensagens, $mensagem);
             }
             return $mensagens;

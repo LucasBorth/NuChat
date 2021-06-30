@@ -1,32 +1,40 @@
 <?php 
 
+//error_reporting(E_ERROR | E_PARSE);
+
 include_once('app/model/Banco.php');
 Banco::createSchema();
 
-include_once('app/controller/LoginController.php');
-$controller = new LoginController();
-
-if(!array_key_exists('acao', $_GET)) {
-    $_GET['acao'] = 'logar';
+if(!array_key_exists('view', $_GET)) {
+    $_GET['view'] = 'perfil';
 }
 
-switch ($_GET['acao']) {
+switch ($_GET['view']) {
     case 'cadastrar':
+        include_once('app/controller/RegisterController.php');
+        $controller = new RegisterController();
         $controller->cadastrar();
         break;
-    case 'perfil':
-        $controller->carregarPerfil();
+    case 'logar':
+        include_once('app/controller/LoginController.php');
+        $controller = new LoginController();
+        $controller->logar();
         break;
     case 'sair':
+        include_once('app/controller/PerfilController.php');
+        $controller = new PerfilController();
         $controller->sair();
-    case 'encontrar':
-        $controller->encontrar();
         break;
     case 'editar':
-        $controller->editar();
+        include_once('app/controller/PerfilController.php');
+        $controller = new PerfilController();
+        $controller->editarPerfil();
         break;
     default:
-        $controller->logar();
+        include_once('app/controller/PerfilController.php');
+        $controller = new PerfilController();
+        $controller->mostrarConversas();
+        break;
 }
 
 ?>

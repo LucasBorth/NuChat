@@ -1,8 +1,7 @@
-<header class="navbar shadow small-padding">
+<header class="navbar">
     <img class="logo" id="logo" src="images/logo.svg" alt="Logo">
-    <h4 class="purple-font logo">NuChat</h4>
-    <a href="index.php?acao=sair"><button class="secondary-button">Sair</button></a>
-    <a href="index.php?acao=encontrar"><button class="secondary-button">Encontrar</button></a>
-    <a href="index.php?acao=perfil"><button class="primary-button">Conversas</button></a>
-    <a href="index.php?acao=editar"><button class="secondary-button">Editar Perfil</button></a>
+    <h4 class="color-purple logo">NuChat</h4>
+    <a href="index.php?view=editar"><button class="button-white">Editar Perfil</button></a>
+    <a href="index.php?view=perfil"><button class="button-purple">Conversas</button></a>
+    <a href="index.php?view=sair"><button class="button-white">Sair</button></a>
 </header>

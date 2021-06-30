@@ -1,30 +1,37 @@
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <?php include('app/view/head.php') ?>
     <title>NuChat</title>
 </head>
 <body>
-    <div class="align-center middle-margin">
-        <div class="card shadow middle-padding" style="width: 60%;">
-            <div class="align-center">
+    <div class="card-absolute">
+        <div class="card card-centralized card-border">
+            <div class="card-item">
                 <img src="images/logo.svg" alt="Logo" id="logo">
-                <h4 class="purple-font">NuChat</h4>
+                <h3 class="color-purple">NuChat</h3> 
             </div>
-            <div class="align-center">
-                <h2>Crie sua conta no NuChat</h2>
+            <div class="card-item">
+                <h2>Cadastrar</h2>
             </div>
             <form method="POST">
-                <div class="align-top">
-                    <div class="small-margin">
-                        <input type="text" name="nome_usuario" placeholder="Nome completo" required>
-                        <input type="text" name="email" placeholder="E-mail" required>
-                        <input type="password" name="senha" placeholder="Digite sua senha" required>
-                        <button class="primary-button" type="submit">Cadastrar</button>
-                        <a href="index.php?acao=logar" class="secondary-button">Fazer Login</a>
-                    </div>
+                <div class="card-item">
+                    <label class="color-purple">Nome:</label>
+                    <input type="text" name="nome_usuario" placeholder="Digite seu nome" required>
                 </div>
-            </form>
-        </div>
-    </div>
+                <div class="card-item">
+                    <label class="color-purple">Email:</label>
+                    <input type="email" name="email" placeholder="Digite seu email" required>
+                </div>
+                <div class="card-item">
+                    <label class="color-purple">Senha:</label>
+                    <input type="password" name="senha" placeholder="*****" required>
+                </div>
+                <div class="card-item">
+                    <button type="submit" class="button-purple">Cadastrar</button>
+                    <a href="index.php?view=logar" class="button-white">Fazer Login</a>
+                </div>
+            </form>    
+        </div>    
 </body>
 </html>

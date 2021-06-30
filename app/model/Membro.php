@@ -1,6 +1,6 @@
 <?php
 
-include_once("Banco.php");
+include_once('app/model/Banco.php');
 
 class Membro {
 

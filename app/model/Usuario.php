@@ -1,6 +1,6 @@
 <?php
 
-include_once("Banco.php");
+include_once('app/model/Banco.php');
 
 class Usuario {
 
@@ -70,6 +70,27 @@ class Usuario {
         $db = Banco::getInstance();
 
         $stmt = $db->prepare('SELECT * FROM Usuarios');
+        $stmt->execute();
+
+        $resultado = $stmt->fetchAll();
+
+        if ($resultado) {
+            $usuarios = array();
+            foreach ($resultado as $value) {
+                $usuario = new Usuario($value['email'], $value['nome_usuario'], $value['senha']);
+                array_push($usuarios, $usuario);
+            }
+            return $usuarios;
+        } else {
+            return NULL;
+        }
+    }
+
+    public static function buscarTodosPorNome(String $nomeBuscado) {
+        $db = Banco::getInstance();
+
+        $stmt = $db->prepare('SELECT * FROM Usuarios WHERE nome_usuario LIKE :nome');
+        $stmt->bindValue(':nome', '%'.$nomeBuscado.'%');
         $stmt->execute();
 
         $resultado = $stmt->fetchAll();
