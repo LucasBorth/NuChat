@@ -3,6 +3,7 @@
 include_once('app/controller/Controller.php');
 include_once('app/model/Usuario.php');
 include_once('app/model/Mensagem.php');
+include_once('app/model/Grupo.php');
 
 class PerfilController extends Controller {
 
@@ -59,6 +60,25 @@ class PerfilController extends Controller {
         		';
         	}
         }
+
+        # Exibicao de Grupos
+
+        $grupos = Grupo::buscarTodos();
+        $quantidade_grupos = count($grupos);
+
+        for($i = 0; $i < $quantidade_grupos; $i++) {
+            $id_grupo = $grupos[$i]->__get('id_grupo');
+            $titulo = $grupos[$i]->__get('titulo');
+        	echo '
+    			<div class="card-item">
+    				<img src="images/grupo.png" alt="Profile Picture" id="profile-picture">
+    				<a href="index.php?view=perfil&id_grupo='.$id_grupo.'">
+    					<button class="button-white">'.$titulo.'</button>
+    				</a>
+				</div>	
+        	';
+        }
+
 	}
 
     public function mostrarContatosPorNome() {
@@ -94,8 +114,17 @@ class PerfilController extends Controller {
 
     public function enviarMensagem() {
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $mensagem = new Mensagem($_POST['mensagem'], $this->usuarioLogado->__get('email'), $_GET['email']);
-            Mensagem::salvarMensagem($mensagem);
+            $hora = str_replace(date('Y/m/d H:i:s'), '/', '-');
+
+            if (array_key_exists('email', $_GET)){
+                $mensagem = new Mensagem($_POST['mensagem'], $this->usuarioLogado->__get('email'), $_GET['email'], $hora);
+                Mensagem::salvarMensagem($mensagem);
+            }
+
+            if (array_key_exists('id_grupo', $_GET)){
+                $mensagem = new Mensagem($_POST['mensagem'], $this->usuarioLogado->__get('email'), $_GET['id_grupo'], $hora);
+                Mensagem::salvarMensagem($mensagem);
+            }
         } 
     }
 
@@ -127,6 +156,9 @@ class PerfilController extends Controller {
                     {
                         echo '<div class="message-my">';
                         echo $mensagens[$i]->__get('text_mensagem');
+                        echo '<br><data>';
+                        echo $mensagens[$i]->__get('data_mensagem');;
+                        echo '</data>';
                         echo '</div>';
                     } else {
 
@@ -135,6 +167,9 @@ class PerfilController extends Controller {
                         echo '<div class="message-your">';
                         echo '<h4 class="color-purple">'.$nome.'</h4>';
                         echo $mensagens[$i]->__get('text_mensagem');
+                        echo '<br><data>';
+                        echo $mensagens[$i]->__get('data_mensagem');;
+                        echo '</data>';
                         echo '</div>';
                     }
                 } 
@@ -154,12 +189,59 @@ class PerfilController extends Controller {
             echo '</form>';
             echo '</div>';
 		} else {
-            echo '<div class="card card-centralized">';
-            echo '<h2>Comece a conversar agora mesmo</h2>';
-            echo '</div>';
-            echo '<div class="card card-centralized">';
-            echo '<h2 class="color-purple">Escolha alguem dos contatos e pronto</h2>';
-            echo '</div>';
+            # Exibir mensagens de Grupo
+
+            if(array_key_exists('id_grupo', $_GET)) {
+                $mensagens = Mensagem::buscarTodasMensagensGrupo($_GET['id_grupo']);
+
+                echo '<div class="scroll">';
+                if(!is_null($mensagens)) {
+                    $quantidade_mensagens = count($mensagens);
+                    for($i = 0; $i < $quantidade_mensagens; $i++){
+                        if($mensagens[$i]->__get('email_remetente') == $this->usuarioLogado->__get('email'))
+                        {
+                            echo '<div class="message-my">';
+                            echo $mensagens[$i]->__get('text_mensagem');
+                            echo '<br><data>';
+                            echo $mensagens[$i]->__get('data_mensagem');;
+                            echo '</data>';
+                            echo '</div>';
+                        } else {
+
+                            $usuario = Usuario::buscarPorEmail($mensagens[$i]->__get('email_remetente'));
+                            $nome = $usuario->__get('nome_usuario');
+                            echo '<div class="message-your">';
+                            echo '<h4 class="color-purple">'.$nome.'</h4>';
+                            echo $mensagens[$i]->__get('text_mensagem');
+                            echo '<br><data>';
+                            echo $mensagens[$i]->__get('data_mensagem');;
+                            echo '</data>';
+                            echo '</div>';
+                        }
+                    } 
+                } else {
+                    echo '<div class="card card-centralized">';
+                    echo '<h2>Ainda nao ha mensagens</h2>';
+                    echo '</div>';
+                    echo '<div class="card card-centralized">';
+                    echo '<h2 class="color-purple">Envie uma mensagem</h2>';
+                    echo '</div>';
+                }
+                echo '</div>';
+                echo '<div class="card card-centralized">';
+                echo '<form method="post">';
+                echo '<input type="text" name="mensagem" autocomplete="off" placeholder="Escreva aqui sua mensagem">';
+                echo '<button type="submit" class="button-purple">Enviar Mensagem</button>';
+                echo '</form>';
+                echo '</div>';
+            } else {
+                echo '<div class="card card-centralized">';
+                echo '<h2>Comece a conversar agora mesmo</h2>';
+                echo '</div>';
+                echo '<div class="card card-centralized">';
+                echo '<h2 class="color-purple">Escolha alguem dos contatos e pronto</h2>';
+                echo '</div>';
+            }
         }
 	}
 

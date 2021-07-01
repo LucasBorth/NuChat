@@ -41,6 +41,11 @@ h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
+data {
+  font-size: 9px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
 
 /* Grouping content
    ========================================================================== */

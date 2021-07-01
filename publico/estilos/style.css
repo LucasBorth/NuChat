@@ -155,5 +155,8 @@ input {
 	overflow: auto;
 }
 
-
-	
+.mymessage data {
+	font-size: 2px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}

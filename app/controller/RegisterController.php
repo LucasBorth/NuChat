@@ -11,7 +11,7 @@ class RegisterController extends Controller {
     */
     public function cadastrar() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $usuario = new Usuario($_POST['email'], $_POST['new_name'], $_POST['new_password']);
+            $usuario = new Usuario($_POST['email'], $_POST['nome_usuario'], $_POST['senha']);
             
             try {
                 $usuario->salvarUsuario();
@@ -21,6 +21,12 @@ class RegisterController extends Controller {
             }
         }
         $this->view('pgCadastrar');
+    }
+
+    public function criarGrupo() {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $grupo = new Grupo();
+        }
     }
 }
 

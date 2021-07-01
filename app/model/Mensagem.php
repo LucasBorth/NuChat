@@ -10,11 +10,12 @@ class Mensagem {
     private $email_destinatario;
     private $data_mensagem;
 
-    function __construct(String $text_mensagem, String $email_remetente, String $email_destinatario)
+    function __construct(String $text_mensagem, String $email_remetente, String $email_destinatario, String $data_mensagem)
     {
         $this -> text_mensagem = $text_mensagem;
         $this -> email_remetente = $email_remetente;
         $this -> email_destinatario = $email_destinatario;
+        $this -> data_mensagem = $data_mensagem;
     }
 
     public function __get($campo) {
@@ -65,7 +66,28 @@ class Mensagem {
         if ($resultado) {
             $mensagens = array();
             foreach ($resultado as $value) {
-                $mensagem = new Mensagem($value['text_mensagem'], $value['email_remetente'], $value['email_destinatario']);
+                $mensagem = new Mensagem($value['text_mensagem'], $value['email_remetente'], $value['email_destinatario'], $value['data_mensagem']);
+                array_push($mensagens, $mensagem);
+            }
+            return $mensagens;
+        } else {
+            return NULL;
+        }
+    }
+
+    public static function buscarTodasMensagensGrupo(int $id_grupo){
+        $db = Banco::getInstance();
+
+        $stmt = $db->prepare('SELECT * FROM Mensagens WHERE (email_destinatario = :id_grupo) ORDER BY data_mensagem ASC');
+        $stmt->bindValue(':id_grupo', strval($id_grupo));
+        $stmt->execute();
+
+        $resultado = $stmt->fetchAll();
+
+        if ($resultado) {
+            $mensagens = array();
+            foreach ($resultado as $value) {
+                $mensagem = new Mensagem($value['text_mensagem'], $value['email_remetente'], $value['email_destinatario'], $value['data_mensagem']);
                 array_push($mensagens, $mensagem);
             }
             return $mensagens;

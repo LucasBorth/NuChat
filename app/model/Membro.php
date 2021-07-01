@@ -3,12 +3,13 @@
 include_once('app/model/Banco.php');
 
 class Membro {
+    private $id_membro;
+    private $email_usuario;
+    private $id_grupo;
 
-    private int $id_grupo;
-    private String $email_usuario;
-
-    function __construct(int $id_grupo, String $email_usuario)
+    function __construct(int $id_membro, String $email_usuario, int $id_grupo)
     {
+        $this -> id_membro = $id_membro;
         $this -> id_grupo = $id_grupo;
         $this -> email_usuario = $email_usuario;
     }
